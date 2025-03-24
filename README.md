@@ -1,59 +1,55 @@
-# MERN Project
+# ProdManage
 
-## Description
-This is a MERN (MongoDB, Express, React, Node.js) stack project that includes a frontend built with React and a backend using Express
+ProdManage is a simple product management application that allows users to add, edit, and delete products.
 
-## Problem Faced
-When directly accessing a route like `/create` or refreshing the page, the application throws a "Not Found" error. However, navigating through the frontend works correctly without issues.
+## Features
+- Add new products
+- Edit existing products
+- Delete products
 
-### Cause of the Problem
-This issue occurs because React Router is handling routing on the client-side. When a user refreshes or directly visits a route, the request is sent to the backend, which does not recognize the route and returns a 404 error.
-
-## Solution I tried but did not work
-To fix this, configure the Express server to always serve the frontend's `index.html` for unknown routes so that React Router can handle them. Add the following code to your `server.js` or `server.ts`:
-
-```js
-const path = require("path");
-app.use(express.static(path.join(__dirname, "client/build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
-});
-```
-
-## Help
-Please ignore the commit message :)
-Help will be very appreciated
+## Tech Stack
+- **Frontend:** JavaScript, React, Chakra UI
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
 
 ## Installation
-1. Clone the repository:
+
+1. Clone this repository:
    ```sh
-   git clone https://github.com/your-repo.git
+   git clone https://github.com/yourusername/prodmanage.git
+   cd prodmanage
    ```
-2. Install dependencies for both frontend and backend:
+2. Install dependencies:
    ```sh
-   cd client
+   cd backend
    npm install
-   cd ../server
+   cd frontend
    npm install
    ```
-3. Run the backend:
+3. Start the backend server:
    ```sh
-   npm run server
+   cd backend
+   npm run dev
    ```
-4. Run the frontend:
+4. Start the frontend:
    ```sh
-   cd client
-   npm start
+   cd frontend
+   npm run dev
    ```
 
-## Technologies Used
-- React.js
-- Express.js
-- MongoDB
-- Node.js
-- React Router
+## Future Updates
+- Improved UI/UX
+- Product search functionality
+- Product categories
+- Stock management
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+This project is open-source and available under the MIT License.
 
 ## Author
 Alfredho Pranoto
+
 
