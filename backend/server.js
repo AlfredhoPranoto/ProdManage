@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 const origins = process.env.CORS_ORIGINS
   ? process.env.CORS_ORIGINS.split(",")
-  : ["https://mern-product-management.vercel.app"];
+  : ["https://prodmanager.vercel.app"];
 
 app.options("*", cors());
 app.use(express.json()); // allow us to accept JSON data in the req.body
